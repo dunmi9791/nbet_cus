@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<menuitem name="Gencos" id="nbet_genco_menu" parent="account.menu_finance_payables"
+              sequence="4" action="action_nbet_genco"/>
+</odoo>

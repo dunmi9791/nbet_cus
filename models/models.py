@@ -2,6 +2,15 @@
 
 from odoo import models, fields, api
 
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    is_genco = fields.Boolean(string="Is a GENCO",  )
+
+
+
+
 # class nbet_custom(models.Model):
 #     _name = 'nbet_custom.nbet_custom'
 
