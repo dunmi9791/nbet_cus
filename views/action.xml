@@ -18,4 +18,17 @@
           </p>
         </field>
     </record>
+<!--    <record id="open_budget_lines" model="ir.actions.act_window">-->
+<!--        <field name="name">Budget Lines</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">crossovered.budget</field>-->
+<!--        <field name="view_type">form</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="domain">[('crossovered_budget_id','=',active_id)]</field>-->
+<!--        <field name="help" type="html">-->
+<!--          <p class="o_view_nocontent_smiling_face">-->
+
+<!--          </p>-->
+<!--        </field>-->
+<!--    </record>-->
 </odoo>

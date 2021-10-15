@@ -20,14 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account', ],
+    'depends': ['base', 'account', 'om_account_budget',],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/action.xml',
         'views/views.xml',
         'views/templates.xml',
-        'views/action.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
