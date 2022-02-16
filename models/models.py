@@ -31,7 +31,43 @@ class CrossoveredBudget(models.Model):
             'type': 'ir.actions.act_window',
 
         }
-        
+
+
+class CrossoveredBudgetLines(models.Model):
+    _inherit = 'crossovered.budget.lines'
+
+    released_amount = fields.Monetary(
+        string='Released Amount',
+        required=False)
+    practical_amount = fields.Monetary(
+        compute='_compute_practical_amount', string='Actual Amount', help="Amount really earned/spent.")
+    planned_amount = fields.Monetary(
+        'Budgeted Amount', required=True,
+        help="Amount you plan to earn/spend. Record a positive amount if it is a revenue and a negative amount if it is a cost.")
+    percentage = fields.Float(
+        compute='_compute_percentage', string='Achievement',
+        help="Comparison between practical and planned amount. This measure tells you if you are below or over budget.")
+    percentage_released = fields.Float(
+        compute='_compute_percentage_released', string='Achievement on Released',
+        help="Comparison between practical and released amount. This measure tells you if you are below or over budget.")
+
+    # the percentage field was reworked to compute against the planned amount instead of theoretical
+
+    @api.multi
+    def _compute_percentage(self):
+        for line in self:
+            if line.planned_amount != 0.00:
+                line.percentage = float((line.practical_amount or 0.0) / line.planned_amount)
+            else:
+                line.percentage = 0.00
+
+    @api.multi
+    def _compute_percentage_released(self):
+        for line in self:
+            if line.released_amount != 0.00:
+                line.percentage_released = float((line.practical_amount or 0.0) / line.released_amount)
+            else:
+                line.percentage_released = 0.00
 
 
 
