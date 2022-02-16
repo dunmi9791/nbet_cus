@@ -72,10 +72,13 @@
           <field name="arch" type="xml">
 
               <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='practical_amount']" position="before">
-                        <field name ="released_amount"/>
+                        <field name ="released_amount" sum="Released Amount"/>
                </xpath>
               <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='theoritical_amount']" position="replace">
-                        <field name ="percentage_released"/>
+                        <field name ="percentage_released" widget="percentage"/>
+               </xpath>
+              <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='paid_date']" position="replace">
+
                </xpath>
 
           </field>
