@@ -45,7 +45,7 @@ class CrossoveredBudgetLines(models.Model):
         'Budgeted Amount', required=True,
         help="Amount you plan to earn/spend. Record a positive amount if it is a revenue and a negative amount if it is a cost.")
     percentage = fields.Float(
-        compute='_compute_percentage', string='Achievement',
+        compute='_compute_percentage', string='Achievement on Budgeted',
         help="Comparison between practical and planned amount. This measure tells you if you are below or over budget.")
     percentage_released = fields.Float(
         compute='_compute_percentage_released', string='Achievement on Released',
