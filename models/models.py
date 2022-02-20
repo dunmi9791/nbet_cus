@@ -70,6 +70,16 @@ class CrossoveredBudgetLines(models.Model):
                 line.percentage_released = 0.00
 
 
+class AccountingReport(models.TransientModel):
+    _inherit = "accounting.report"
+
+    report_type = fields.Selection(
+        string='Report Type',
+        selection=[('normal', 'Normal'),
+                   ('tally', 'T Style'), ],
+        default='normal', )
+
+
 
 
 # class nbet_custom(models.Model):
