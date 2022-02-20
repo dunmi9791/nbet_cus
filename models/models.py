@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import math
 
 
 class ResPartner(models.Model):
@@ -18,7 +19,7 @@ class CrossoveredBudget(models.Model):
     def get_budget_count(self):
         count = self.env['crossovered.budget.lines'].search_count([('crossovered_budget_id', '=', self.id)])
         self.budget_line_count = count
-        
+
     @api.multi
     def open_budget_lines(self):
         return {
@@ -41,6 +42,8 @@ class CrossoveredBudgetLines(models.Model):
         required=False)
     practical_amount = fields.Monetary(
         compute='_compute_practical_amount', string='Actual Amount', help="Amount really earned/spent.")
+    actual_amount = fields.Monetary(
+        compute='_compute_actual_amount', string='Actual Amount', help="Amount really earned/spent.")
     planned_amount = fields.Monetary(
         'Budgeted Amount', required=True,
         help="Amount you plan to earn/spend. Record a positive amount if it is a revenue and a negative amount if it is a cost.")
@@ -57,7 +60,7 @@ class CrossoveredBudgetLines(models.Model):
     def _compute_percentage(self):
         for line in self:
             if line.planned_amount != 0.00:
-                line.percentage = float((line.practical_amount or 0.0) / line.planned_amount)
+                line.percentage = float((line.actual_amount or 0.0) / line.planned_amount)
             else:
                 line.percentage = 0.00
 
@@ -65,9 +68,14 @@ class CrossoveredBudgetLines(models.Model):
     def _compute_percentage_released(self):
         for line in self:
             if line.released_amount != 0.00:
-                line.percentage_released = float((line.practical_amount or 0.0) / line.released_amount)
+                line.percentage_released = float((line.actual_amount or 0.0) / line.released_amount)
             else:
                 line.percentage_released = 0.00
+
+    @api.onchange('practical_amount')
+    def _compute_actual_amount(self):
+        if self.practical_amount:
+            self.actual_amount = abs(self.practical_amount)
 
 
 class AccountingReport(models.TransientModel):

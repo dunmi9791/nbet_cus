@@ -29,7 +29,7 @@
             </search>
         </field>
     </record>
-      <!-- Inherit Form View to Modify it -->
+       Inherit Form View to Modify it
       <record id="inherit_crossovered_budget_view_form" model="ir.ui.view">
           <field name="name">crossovered_budget_form_inherit</field>
           <field name="model">crossovered.budget</field>
@@ -44,9 +44,6 @@
                   </div>
               </sheet>
 
-<!--              <xpath expr="//field[@name='name']" position="">-->
-<!--                  &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
-<!--              </xpath>-->
 
           </field>
       </record>
@@ -73,11 +70,15 @@
 
               <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='practical_amount']" position="before">
                         <field name ="released_amount" sum="Released Amount"/>
+                        <field name ="actual_amount" sum="Actual Amount"/>
                </xpath>
               <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='theoritical_amount']" position="replace">
                         <field name ="percentage_released" widget="percentage"/>
                </xpath>
               <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='paid_date']" position="replace">
+
+               </xpath>
+              <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='practical_amount']" position="replace">
 
                </xpath>
 
