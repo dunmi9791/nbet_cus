@@ -72,10 +72,12 @@ class CrossoveredBudgetLines(models.Model):
             else:
                 line.percentage_released = 0.00
 
+    @api.multi
     @api.onchange('practical_amount')
     def _compute_actual_amount(self):
-        if self.practical_amount:
-            self.actual_amount = abs(self.practical_amount)
+        for line in self:
+            if line.practical_amount:
+                line.actual_amount = abs(line.practical_amount)
 
 
 class AccountingReport(models.TransientModel):
