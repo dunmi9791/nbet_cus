@@ -43,15 +43,15 @@ class CrossoveredBudgetLines(models.Model):
     practical_amount = fields.Monetary(
         compute='_compute_practical_amount', string='Actual Amount', help="Amount really earned/spent.")
     actual_amount = fields.Monetary(
-        compute='_compute_actual_amount', string='Actual Amount', help="Amount really earned/spent.")
+        compute='_compute_actual_amount', string='Amount Utilised', help="Amount really earned/spent.")
     planned_amount = fields.Monetary(
         'Budgeted Amount', required=True,
         help="Amount you plan to earn/spend. Record a positive amount if it is a revenue and a negative amount if it is a cost.")
     percentage = fields.Float(
-        compute='_compute_percentage', string='Achievement on Budgeted',
+        compute='_compute_percentage', string='Percentage on Budgeted',
         help="Comparison between practical and planned amount. This measure tells you if you are below or over budget.")
     percentage_released = fields.Float(
-        compute='_compute_percentage_released', string='Achievement on Released',
+        compute='_compute_percentage_released', string='Percentage on Released',
         help="Comparison between practical and released amount. This measure tells you if you are below or over budget.")
 
     # the percentage field was reworked to compute against the planned amount instead of theoretical
