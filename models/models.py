@@ -90,6 +90,10 @@ class AccountingReport(models.TransientModel):
         default='normal', )
 
 
+class AccountMove(models.Model):
+    _inherit = 'account.move'
+
+    attachment = fields.Binary(string="Attached document",  )
 
 
 # class nbet_custom(models.Model):

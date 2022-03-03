@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="remove negative from budget">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +47,7 @@
       <workItem from="1645359825961" duration="6192000" />
       <workItem from="1645549121296" duration="32000" />
       <workItem from="1645724812793" duration="641000" />
+      <workItem from="1646283172413" duration="786000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1633475461365</created>
