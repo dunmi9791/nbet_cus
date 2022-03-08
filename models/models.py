@@ -2,7 +2,9 @@
 
 from odoo import models, fields, api
 import math
-
+from dateutil import relativedelta
+from datetime import datetime
+from datetime import date
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
@@ -94,6 +96,23 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
     attachment = fields.Binary(string="Attached document",  )
+    status = fields.Selection(
+        string='Effective Status',
+        selection=[('not effective', 'Future Effective'),
+                   ('due', 'Effective'),  ],
+        compute='_compute_status',
+        required=False, )
+
+    @api.multi
+    def _compute_status(self):
+        for rec in self:
+            rec.status = "due"
+            if date.today() < rec.date:
+                rec.status = "not effective"
+            elif date.today() == rec.date:
+                rec.status = "due"
+            elif date.today() > rec.date:
+                rec.status = "due"
 
 
 # class nbet_custom(models.Model):
