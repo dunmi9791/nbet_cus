@@ -114,6 +114,16 @@ class AccountMove(models.Model):
             elif date.today() > rec.date:
                 rec.status = "due"
 
+class AccountAsset(models.Model):
+    _inherit = 'account.asset.asset'
+
+    assigned_to = fields.Many2one(
+        comodel_name='res.users',
+        string='Assigned to',
+        required=False)
+    source_of_fund = fields.Char(
+        string='Source of fund',
+        required=False)
 
 # class nbet_custom(models.Model):
 #     _name = 'nbet_custom.nbet_custom'
