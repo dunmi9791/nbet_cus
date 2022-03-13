@@ -5,6 +5,7 @@ import math
 from dateutil import relativedelta
 from datetime import datetime
 from datetime import date
+from odoo.tools.translate import _
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'

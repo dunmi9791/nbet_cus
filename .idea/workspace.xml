@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="traces">
-      <change afterPath="$PROJECT_DIR$/data/automation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="asset sequence" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="OdooViewEmpty" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +60,7 @@
       <workItem from="1646831387838" duration="610000" />
       <workItem from="1646926947171" duration="493000" />
       <workItem from="1647024867657" duration="1268000" />
-      <workItem from="1647136409736" duration="2001000" />
+      <workItem from="1647136409736" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1633475461365</created>
@@ -123,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647142243005</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="asset sequence">
+      <created>1647143062007</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647143062007</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +155,7 @@
     <MESSAGE value="tally label change" />
     <MESSAGE value="remove negative from budget" />
     <MESSAGE value="traces" />
-    <option name="LAST_COMMIT_MESSAGE" value="traces" />
+    <MESSAGE value="asset sequence" />
+    <option name="LAST_COMMIT_MESSAGE" value="asset sequence" />
   </component>
 </project>
