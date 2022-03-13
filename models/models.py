@@ -120,10 +120,10 @@ class AccountAsset(models.Model):
     assigned_to = fields.Many2one(
         comodel_name='res.users',
         string='Assigned to',
-        required=False)
+        required=False, track_visibility=True, trace_visibility='onchange',)
     source_of_fund = fields.Char(
         string='Source of fund',
-        required=False)
+        required=False, track_visibility=True, trace_visibility='onchange',)
 
 # class nbet_custom(models.Model):
 #     _name = 'nbet_custom.nbet_custom'

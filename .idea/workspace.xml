@@ -29,7 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cash_flow_statement" />
+    <property name="last_opened_file_path" value="$USER_HOME$/smerp/software-dev_smerp12/kpi_dashboard" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -54,6 +54,8 @@
       <workItem from="1646800707376" duration="599000" />
       <workItem from="1646831387838" duration="610000" />
       <workItem from="1646926947171" duration="493000" />
+      <workItem from="1647024867657" duration="1268000" />
+      <workItem from="1647136409736" duration="1184000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1633475461365</created>
