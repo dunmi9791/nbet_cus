@@ -124,7 +124,16 @@ class AccountAsset(models.Model):
     source_of_fund = fields.Char(
         string='Source of fund',
         required=False, track_visibility=True, trace_visibility='onchange',)
+    asset_number = fields.Char(string="Asset Number ",
+                       default=lambda self: _('New'),
+                       requires=False, readonly=True,)
 
+    @api.model
+    def create(self, vals):
+        if vals.get('asset_number', _('New')) == _('New'):
+            vals['asset_number'] = self.env['ir.sequence'].next_by_code('increment_assets') or _('New')
+        result = super(AccountAsset, self).create(vals)
+        return result
 # class nbet_custom(models.Model):
 #     _name = 'nbet_custom.nbet_custom'
 
