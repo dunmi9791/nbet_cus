@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account', 'om_account_budget', 'accounting_pdf_reports', 'tis_tally_bs_and_pl'],
+    'depends': ['base', 'account', 'om_account_budget', 'accounting_pdf_reports', 'tis_tally_bs_and_pl', 'budget_releases'],
 
     # always loaded
     'data': [
