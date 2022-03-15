@@ -42,7 +42,7 @@ class CrossoveredBudgetLines(models.Model):
 
     released_amount = fields.Monetary(
         string='Released Amount',compute='_compute_released_amount',
-        required=False)
+        required=False, store=True )
     practical_amount = fields.Monetary(
         compute='_compute_practical_amount', string='Actual Amount', help="Amount really earned/spent.")
     actual_amount = fields.Monetary(
@@ -83,6 +83,7 @@ class CrossoveredBudgetLines(models.Model):
                 line.actual_amount = abs(line.practical_amount)
 
     @api.multi
+    @api.depends('analytic_account_id.budget_releases')
     def _compute_released_amount(self):
         for line in self:
             if line.analytic_account_id:
