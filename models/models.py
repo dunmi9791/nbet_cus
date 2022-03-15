@@ -41,7 +41,7 @@ class CrossoveredBudgetLines(models.Model):
     _inherit = 'crossovered.budget.lines'
 
     released_amount = fields.Monetary(
-        string='Released Amount',
+        string='Released Amount',compute='_compute_released_amount',
         required=False)
     practical_amount = fields.Monetary(
         compute='_compute_practical_amount', string='Actual Amount', help="Amount really earned/spent.")
@@ -81,6 +81,19 @@ class CrossoveredBudgetLines(models.Model):
         for line in self:
             if line.practical_amount:
                 line.actual_amount = abs(line.practical_amount)
+
+    @api.multi
+    def _compute_released_amount(self):
+        for line in self:
+            if line.analytic_account_id:
+                releases = []
+                for release in line.analytic_account_id.budget_releases:
+                    releases.append(release.amount)
+                    line.released_amount = sum(releases)
+
+
+
+
 
 
 class AccountingReport(models.TransientModel):
