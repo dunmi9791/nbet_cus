@@ -142,6 +142,11 @@ class AccountAsset(models.Model):
     asset_number = fields.Char(string="Asset Number ",
                        default=lambda self: _('New'),
                        requires=False, readonly=True,)
+    tag_number = fields.Char(string="Tag Number", required=False, track_visibility=True, trace_visibility='onchange',)
+    location = fields.Many2one(
+        comodel_name='location.ebs',
+        string='Location',
+        required=False, track_visibility=True, trace_visibility='onchange',)
 
     @api.model
     def create(self, vals):
@@ -149,6 +154,17 @@ class AccountAsset(models.Model):
             vals['asset_number'] = self.env['ir.sequence'].next_by_code('increment_assets') or _('New')
         result = super(AccountAsset, self).create(vals)
         return result
+
+class LocationEbs(models.Model):
+    _name = 'location.ebs'
+    _description = 'LocationEbs'
+
+    name = fields.Char(string="Location Name", required=False, track_visibility=True, trace_visibility='onchange',)
+    description = fields.Text(
+        string="Description",
+        required=False)
+
+
 # class nbet_custom(models.Model):
 #     _name = 'nbet_custom.nbet_custom'
 
