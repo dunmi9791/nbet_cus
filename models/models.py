@@ -147,6 +147,7 @@ class AccountAsset(models.Model):
         comodel_name='location.ebs',
         string='Location',
         required=False, track_visibility=True, trace_visibility='onchange',)
+    serial_num = fields.Char(string="Serial Number", required=False, track_visibility=True, trace_visibility='onchange', )
 
     @api.model
     def create(self, vals):
