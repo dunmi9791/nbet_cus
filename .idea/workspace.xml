@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="store released" />
+    <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="serial Number">
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +67,7 @@
       <workItem from="1647423818795" duration="457000" />
       <workItem from="1647510867826" duration="734000" />
       <workItem from="1647532563678" duration="605000" />
+      <workItem from="1647606397705" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1633475461365</created>
@@ -157,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647334214092</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="serial Number">
+      <created>1647606616944</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1647606616953</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +193,7 @@
     <MESSAGE value="asset sequence" />
     <MESSAGE value="budget release amount calc" />
     <MESSAGE value="store released" />
-    <option name="LAST_COMMIT_MESSAGE" value="store released" />
+    <MESSAGE value="serial Number" />
+    <option name="LAST_COMMIT_MESSAGE" value="serial Number" />
   </component>
 </project>

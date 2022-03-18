@@ -148,6 +148,12 @@ class AccountAsset(models.Model):
         string='Location',
         required=False, track_visibility=True, trace_visibility='onchange',)
     serial_num = fields.Char(string="Serial Number", required=False, track_visibility=True, trace_visibility='onchange', )
+    manufacturer = fields.Char(string="Manufacturer", required=False, track_visibility=True, trace_visibility='onchange',)
+    warranty_start = fields.Date(
+        string='Warranty Start Date', required=False, track_visibility=True, trace_visibility='onchange',)
+    warranty_end = fields.Date(
+        string='Warranty End Date', required=False, track_visibility=True, trace_visibility='onchange', )
+    model = fields.Char(string="Model", required=False, track_visibility=True, trace_visibility='onchange',)
 
     @api.model
     def create(self, vals):
