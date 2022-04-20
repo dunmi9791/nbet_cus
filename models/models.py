@@ -6,18 +6,35 @@ from dateutil import relativedelta
 from datetime import datetime
 from datetime import date
 from odoo.tools.translate import _
+from odoo.exceptions import UserError, ValidationError
+
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     is_genco = fields.Boolean(string="Is a GENCO",  )
     customer = fields.Boolean(string="Is a DISCO", )
+    advance_limit = fields.Monetary('Advance approval limit', )
+    company_id = fields.Many2one('res.company', string='', required=True, readonly=True,
+                                 default=lambda self: self.env.user.company_id)
+    currency_id = fields.Many2one('res.currency', compute='_compute_currency', store=True, string="Currency")
+
+    @api.one
+    @api.depends('company_id')
+    def _compute_currency(self):
+        self.currency_id = self.company_id.currency_id or self.env.user.company_id.currency_id
 
 
 class CrossoveredBudget(models.Model):
     _inherit = 'crossovered.budget'
 
     budget_line_count = fields.Integer(string="Budget Lines", compute='get_budget_count', )
+    forecast_lines = fields.One2many(
+        comodel_name='budget.forecast',
+        inverse_name='budget_id',
+        string='Forecast lines',
+        required=False)
+    forecast_done = fields.Binary(string="Forecast Done",  )
 
     def get_budget_count(self):
         count = self.env['crossovered.budget.lines'].search_count([('crossovered_budget_id', '=', self.id)])
@@ -35,6 +52,22 @@ class CrossoveredBudget(models.Model):
             'type': 'ir.actions.act_window',
 
         }
+
+    def create_forecast_lines(self):
+        if self.forecast_done:
+            msg = _('Forecast Lines Already entered')
+            raise UserError(msg)
+        else:
+            for line in self.crossovered_budget_line:
+                forecast_line = {
+                    'budget_line': line.analytic_account_id.id,
+                    'budget_id': self.id,
+                    'planned_amount': line.planned_amount,
+
+                }
+                record = self.env['budget.forecast']
+                record.create(forecast_line)
+                # self.forecast_done = True
 
 
 class CrossoveredBudgetLines(models.Model):
@@ -154,6 +187,7 @@ class AccountAsset(models.Model):
     warranty_end = fields.Date(
         string='Warranty End Date', required=False, track_visibility=True, trace_visibility='onchange', )
     model = fields.Char(string="Model", required=False, track_visibility=True, trace_visibility='onchange',)
+
 
     @api.model
     def create(self, vals):

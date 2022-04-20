@@ -35,6 +35,10 @@
           <field name="model">crossovered.budget</field>
           <field name="inherit_id" ref="om_account_budget.crossovered_budget_view_form"/>
           <field name="arch" type="xml">
+              <xpath expr="//button[@name='action_budget_draft']" position="after">
+                  <button string="Forecast" name="create_forecast_lines" states="draft" type="object"/>
+
+              </xpath>
               <sheet position="inside">
                   <div name="button_box" >
                       <button class="oe_stat_button" type="action" name="open_budget_lines"
@@ -60,6 +64,28 @@
             </tree>
         </field>
     </record>
+      <record id="budget_forcast_tree" model="ir.ui.view">
+        <field name="name">budget.forecast.tree</field>
+        <field name="model">budget.forecast</field>
+        <field name="arch" type="xml">
+            <tree string="Budget Forcast" create="true" delete="true" editable="bottom">
+                <field name="budget_line"/>
+                <field name="planned_amount"/>
+                <field name="january"/>
+                <field name="february"/>
+                <field name="march"/>
+                <field name="april"/>
+                <field name="may"/>
+                <field name="june"/>
+                <field name="july"/>
+                <field name="august"/>
+                <field name="september"/>
+                <field name="october"/>
+                <field name="november"/>
+                <field name="december"/>
+            </tree>
+        </field>
+    </record>
 
       <!-- Inherit Form View to Modify it -->
       <record id="budget_form inherit" model="ir.ui.view">
@@ -81,6 +107,13 @@
               <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='practical_amount']" position="replace">
 
                </xpath>
+              <xpath expr="//notebook" position="inside">
+                  <page string="Budget Forecast">
+                      <field name="forecast_lines"/>
+
+                  </page>
+
+              </xpath>
 
           </field>
       </record>

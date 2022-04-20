@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="serial Number" />
+    <list default="true" id="835c4c0e-21a3-4502-9391-5e874eac5837" name="Default Changelist" comment="serial Number">
+      <change afterPath="$PROJECT_DIR$/models/budget_forcast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="OdooViewEmpty" />
+        <option value="OdooModel" />
       </list>
     </option>
   </component>
@@ -28,14 +37,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultOdooViewFileTemplate" value="OdooViewEmpty" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../asset_improvement" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultOdooModelFileTemplate": "OdooModel",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -66,6 +73,14 @@
       <workItem from="1647510867826" duration="734000" />
       <workItem from="1647532563678" duration="605000" />
       <workItem from="1647606397705" duration="2585000" />
+      <workItem from="1647667489649" duration="1230000" />
+      <workItem from="1647871024952" duration="594000" />
+      <workItem from="1647989583801" duration="684000" />
+      <workItem from="1648128603188" duration="2990000" />
+      <workItem from="1649252904968" duration="718000" />
+      <workItem from="1649271506543" duration="1214000" />
+      <workItem from="1649309370383" duration="621000" />
+      <workItem from="1650458166194" duration="8038000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1633475461365</created>
